@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,6 +25,7 @@ public class Robot extends IterativeRobot {
 
   public static final Joystick m_stick = new Joystick(0);
   public static final Timer m_timer = new Timer();
+  SendableChooser<String> autoChooser = new SendableChooser<>();
 
   /**
    * This function is run when the robot is first started up and should be
@@ -35,6 +37,9 @@ public class Robot extends IterativeRobot {
     Catapult.init();
     Drive.init();
     CameraServer.getInstance().startAutomaticCapture();
+    autoChooser.addDefault("Default Autonomous Mode", "Default");
+    autoChooser.addObject("Cross the Line (Anywhere)", "Cross the Line");
+    autoChooser.addObject("Get the switch", "Switch");
   }
 
   /**
