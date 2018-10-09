@@ -11,14 +11,16 @@ public class Debug {
      * Get the data from important sources (i.e. the encoder) and display it on the SmartDashboard
      */
     public static void record(){
-        //SmartDashboard.putString("DB/String 0","" + EncoderP.getPos());
-        //SmartDashboard.putString("DB/String 1", "" + EncoderP.getVel());
-        //SmartDashboard.putString("DB/String 2", "" + EncoderP.getRotations(0, EncoderP.getPos()));
-        //SmartDashboard.putString("DB/String 3", LimitSwitch.talon.getSensorCollection())
-        //SmartDashboard.putString("DB/String 3", LimitSwitch.talon.getSensorCollection())
-        //SmartDashboard.putString("DB/String 3", LimitSwitch.talon.getSensorCollection())
-        //SmartDashboard.putString("DB/String 3", LimitSwitch.talon.getSensorCollection())
-        //SmartDashboard.putString("DB/String 3", LimitSwitch.talon.getSensorCollection())
+        /*
+        SmartDashboard.putString("DB/String 0","" + EncoderP.getPos());
+        SmartDashboard.putString("DB/String 1", "" + EncoderP.getVel());
+        SmartDashboard.putString("DB/String 2", "" + EncoderP.getRotations(0, EncoderP.getPos()));
+        SmartDashboard.putString("DB/String 3", LimitSwitch.talon.getSensorCollection());
+        SmartDashboard.putString("DB/String 3", LimitSwitch.talon.getSensorCollection());
+        SmartDashboard.putString("DB/String 3", LimitSwitch.talon.getSensorCollection());
+        SmartDashboard.putString("DB/String 3", LimitSwitch.talon.getSensorCollection());
+        SmartDashboard.putString("DB/String 3", LimitSwitch.talon.getSensorCollection());
+        */
     }
 
 }
