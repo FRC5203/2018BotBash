@@ -9,14 +9,14 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
  */
 public class Catapult {
 
-    //public static WPI_TalonSRX talon = new WPI_TalonSRX(5);
+    public static WPI_TalonSRX talon = new WPI_TalonSRX(5);
 
     /**
      * Initiate the catapult and the limit switch used on the catapult
      */
     public static void init(){
-        //talon.configForwardLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed, 0);
-        //talon.configForwardSoftLimitEnable(false, 0);
+        talon.configForwardLimitSwitchSource(LimitSwitchSource.FeedbackConnector, LimitSwitchNormal.NormallyClosed, 0);
+        talon.configForwardSoftLimitEnable(false, 0);
     }
 
 }

@@ -45,12 +45,12 @@ public class Drive {
      */
     public static void driveFor(double xSpeed, double zRotation, double timeInSeconds){
         double startTime = Timer.getFPGATimestamp();
-        while(Timer.getFPGATimestamp()- startTime < timeInSeconds){
+        while(Timer.getFPGATimestamp() - startTime < timeInSeconds){
             robotDrive.arcadeDrive(xSpeed, zRotation);
         }
     }
     /**
-     * Drives the robot with the predetermined controls for the controller
+     * Drives the robot with the predetermined controls for the controller (includes)
      */
     public static void controllerDrive(){
         if(Robot.m_stick.getY() > 0.1 || Robot.m_stick.getY() < -0.1 || Robot.m_stick.getX() > 0.1 || Robot.m_stick.getX() < -0.1){

@@ -61,8 +61,6 @@ public class Robot extends IterativeRobot {
   public void autonomousPeriodic() {
     
     EncoderP.update();
-  
-
   }
 
   /**
