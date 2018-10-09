@@ -9,8 +9,11 @@ import com.ctre.phoenix.motorcontrol.SensorCollection;
 public class EncoderP {
 
     public static int pulsesPerRot = 4096;
-    
-    public static void init(){
+
+    /*
+    * Initiates the encoder on the talon for the catapult
+    */
+    static{
         //Catapult.talon.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder,0,0);
     }
     

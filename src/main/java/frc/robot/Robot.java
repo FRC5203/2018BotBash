@@ -33,9 +33,6 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void robotInit() {
-    EncoderP.init();
-    Catapult.init();
-    Drive.init();
     CameraServer.getInstance().startAutomaticCapture();
     autoChooser.addDefault("Default Autonomous Mode", "Default");
     autoChooser.addObject("Cross the Line (Anywhere)", "Cross the Line");
@@ -47,11 +44,8 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void autonomousInit() {
-    EncoderP.init();
-    Drive.init();
     m_timer.reset();
     m_timer.start();
-
   }
 
   /**
@@ -68,8 +62,7 @@ public class Robot extends IterativeRobot {
    */
   @Override
   public void teleopInit() {
-    EncoderP.init();
-    Drive.init();
+
   }
   /**
    * This function is called periodically during teleoperated mode.

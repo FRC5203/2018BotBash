@@ -20,10 +20,11 @@ public class Drive {
     public static SpeedControllerGroup leftSpeedGroup = new SpeedControllerGroup(frontLeft,rearLeft);
     public static final DifferentialDrive robotDrive = new DifferentialDrive(leftSpeedGroup,rightSpeedGroup);
     
-    public static void init(){
-
+    /*
+    * Initiates the safety on the drive train
+    */
+    static{
         robotDrive.setSafetyEnabled(true);
-
     }
     
     /**
