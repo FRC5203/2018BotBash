@@ -6,10 +6,10 @@ import javax.swing.JFrame;
 
 public class Inspector {
 
-    public static JFrame frame;
+    public JFrame frame;
     public static Inspector instance;
 
-    static {
+    public Inspector(){
         frame = new JFrame("Inspector");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setMinimumSize(new Dimension(600, 600));
