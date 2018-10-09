@@ -22,6 +22,18 @@ public class Happiness {
         }
     }
 
+    public void RobotMood(){
+        Random rand2 = new Random();
+        int guy2;
+        guy2 = rand2.nextInt(3);
+        switch(guy2){
+            case 0: SmartDashboard.putString("DB/String 6", "Happy");
+            case 1: SmartDashboard.putString("DB/String 6", "Neutral");
+            case 2: SmartDashboard.putString("DB/String 6", "Sad");
+        }
+    }
+   
+
 
 
 }
