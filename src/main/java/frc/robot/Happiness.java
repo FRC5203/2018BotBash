@@ -9,6 +9,7 @@ public class Happiness {
     //region Variables
     public int guy;
     public Random rand = new Random();
+
     //endregion
 
     public void Positivity(){
@@ -32,6 +33,32 @@ public class Happiness {
             case 2: SmartDashboard.putString("DB/String 6", "Sad");
         }
     }
+    public void SentenceGen(){
+
+    }
+    public String NounGen(){
+        String noun;
+        noun = null;
+        Random nounRand = new Random();
+        int boi = nounRand.nextInt(5);
+        switch(boi){
+            case 0: noun = "tree";
+            case 1: noun = "car";
+            case 2: noun = "person";
+            case 3: noun = "man";
+            case 4: noun = "dog";
+        }
+        
+        return noun;
+        
+    }
+    public String ArticleGen(){
+        String article;
+        article = null;
+
+        return article;
+    }
+    
    
 
 
