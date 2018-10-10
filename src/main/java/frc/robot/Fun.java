@@ -9,7 +9,6 @@ public class Fun {
 
     static Random rand = new Random();
 
-
     /**
      * Makes the robot spin around like its dancing
      */
@@ -33,35 +32,33 @@ public class Fun {
         
         for(int i = 0; i < stringLength; i++){
             switch(rand.nextInt(27)){
-                //region Alphabet
-                case 0: text += ' ';
-                case 1: text += 'a';
-                case 2: text += 'b';
-                case 3: text += 'c';
-                case 4: text += 'd';
-                case 5: text += 'e';
-                case 6: text += 'f';
-                case 7: text += 'g';
-                case 8: text += 'h';
-                case 9: text += 'i';
-                case 10: text += 'j';
-                case 11: text += 'k';
-                case 12: text += 'l';
-                case 13: text += 'm';
-                case 14: text += 'n';
-                case 15: text += 'o';
-                case 16: text += 'p';
-                case 17: text += 'q';
-                case 18: text += 'r';
-                case 19: text += 's';
-                case 20: text += 't';
-                case 21: text += 'u';
-                case 22: text += 'v';
-                case 23: text += 'w';
-                case 24: text += 'x';
-                case 25: text += 'y';
-                case 26: text += 'z';
-                //endregion
+                case 0: text += ' '; break;
+                case 1: text += 'a'; break;
+                case 2: text += 'b'; break;
+                case 3: text += 'c'; break;
+                case 4: text += 'd'; break;
+                case 5: text += 'e'; break;
+                case 6: text += 'f'; break;
+                case 7: text += 'g'; break;
+                case 8: text += 'h'; break;
+                case 9: text += 'i'; break;
+                case 10: text += 'j'; break;
+                case 11: text += 'k'; break;
+                case 12: text += 'l'; break;
+                case 13: text += 'm'; break;
+                case 14: text += 'n'; break;
+                case 15: text += 'o'; break;
+                case 16: text += 'p'; break;
+                case 17: text += 'q'; break;
+                case 18: text += 'r'; break;
+                case 19: text += 's'; break;
+                case 20: text += 't'; break;
+                case 21: text += 'u'; break;
+                case 22: text += 'v'; break;
+                case 23: text += 'w'; break;
+                case 24: text += 'x'; break;
+                case 25: text += 'y'; break;
+                case 26: text += 'z'; break;
             }
         }
         return text;

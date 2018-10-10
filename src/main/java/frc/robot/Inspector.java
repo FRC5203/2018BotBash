@@ -21,6 +21,7 @@ public class Inspector {
 
     public static void main(String[] args){
         instance = new Inspector();
+        System.out.println(Fun.RandomString(1000));
     }
 
 }
