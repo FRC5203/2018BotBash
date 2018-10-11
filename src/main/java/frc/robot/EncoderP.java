@@ -30,29 +30,29 @@ public class EncoderP {
      * Calls on the talon from the catapult to get the encoder sensor information (collection)
      * @return The encoder information for the catapult
      */
-    public static SensorCollection getEncoder(){
-        return Catapult.talon.getSensorCollection();
-    }
+ //   public static SensorCollection getEncoder(){
+  //      return Catapult.talon.getSensorCollection();
+  //  }
     /**
      * Calls on the sensor collection from the Catapult encoder
      * @return The quadrature position of the encoder on the catapult
      */
-    public static int getPos(){
-        return Catapult.talon.getSensorCollection().getQuadraturePosition();
-    }
+  //  public static int getPos(){
+  //      return Catapult.talon.getSensorCollection().getQuadraturePosition();
+  //  }
     /**
      * Sets the number of pulses or position (in code, NOT in the real world) of the encoder on the catapult
      */
-    public static void setPos(int newPosition, int timeoutMs){
-        Catapult.talon.getSensorCollection().setQuadraturePosition(newPosition, timeoutMs);
-    }
+    //public static void setPos(int newPosition, int timeoutMs){
+      //  Catapult.talon.getSensorCollection().setQuadraturePosition(newPosition, timeoutMs);
+   // }
     /**
      * Calls on the sensor collection from the catapult encoder
      * @return The quadrature velocity of the encoder
      */
-    public static int getVel(){
-        return Catapult.talon.getSensorCollection().getQuadratureVelocity();
-    }
+  //  public static int getVel(){
+    //    return Catapult.talon.getSensorCollection().getQuadratureVelocity();
+   // }
     
     /** Get and return the number of rotations that would have been done between the specified 
     * start position (start pulses) and the specified end position (end pulses)
@@ -75,6 +75,5 @@ public class EncoderP {
     public static double driveInchesToPulses(int inches){
         //200.58 is the pulses per inch based on the wheel circumference of the drive train
         return inches * 200.58;
-
     }
 }

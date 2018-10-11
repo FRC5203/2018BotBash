@@ -25,6 +25,9 @@ public class Drive {
     */
     static{
         robotDrive.setSafetyEnabled(true);
+       /* for(WPI_TalonSRX talon : new WPI_TalonSRX[]{frontLeft,frontRight,rearLeft,rearRight}){
+            talon.configPeakCurrentLimit(amps, timeoutMs)
+        } */
     }
     
     /**
@@ -54,14 +57,19 @@ public class Drive {
      * Drives the robot with the predetermined controls for the controller (includes)
      */
     public static void controllerDrive(){
-        if(Robot.m_stick.getY() > 0.1 || Robot.m_stick.getY() < -0.1 || Robot.m_stick.getX() > 0.1 || Robot.m_stick.getX() < -0.1){
+        if(Robot.m_stick.getY() > 0.01 || Robot.m_stick.getY() < 0.01 || Robot.m_stick.getX() > 0.01 || Robot.m_stick.getX() < 0.01){
             robotDrive.arcadeDrive(Math.pow(Robot.m_stick.getY(),3), Robot.m_stick.getX());
         }
         else{
             robotDrive.arcadeDrive(0,0);
         }
     }
-
+   /* if(Robot.m_stick.getY() > 0.1 || Robot.m_stick.getY() < -0.1 || Robot.m_stick.getX() > 0.1 || Robot.m_stick.getX() < -0.1){
+        robotDrive.arcadeDrive(Math.pow(Robot.m_stick.getY(),3), Robot.m_stick.getX());
+    }
+    else{
+        robotDrive.arcadeDrive(0,0);
+    }*/
     /**
      * Don't attempt to use unless an encoder is on the drive train
      */
