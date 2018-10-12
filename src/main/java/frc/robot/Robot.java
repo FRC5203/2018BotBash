@@ -54,6 +54,8 @@ public class Robot extends IterativeRobot {
   @Override
   public void autonomousPeriodic() {
     
+    Drive.driveFor(0.5, 0, 3);
+
     EncoderP.update();
   }
 
