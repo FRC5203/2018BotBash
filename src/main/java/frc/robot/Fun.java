@@ -3,7 +3,7 @@ package frc.robot;
 import java.util.Random;
 
 /**
- * A class for random fun programming stuff
+ * A class for random fun programming stuff.
  */
 public class Fun {
 

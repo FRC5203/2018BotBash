@@ -27,6 +27,8 @@ public class Robot extends IterativeRobot {
   public static final Timer m_timer = new Timer();
   SendableChooser<String> autoChooser = new SendableChooser<>();
 
+  boolean doneWithAuto = false;
+
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -46,6 +48,7 @@ public class Robot extends IterativeRobot {
   public void autonomousInit() {
     m_timer.reset();
     m_timer.start();
+    doneWithAuto = false;
   }
 
   /**
@@ -54,7 +57,10 @@ public class Robot extends IterativeRobot {
   @Override
   public void autonomousPeriodic() {
     
-    Drive.driveFor(0.5, 0, 3);
+    if(!doneWithAuto){
+      Drive.driveForTime(0.5, 0, 3);
+      doneWithAuto = true;
+    }
 
     EncoderP.update();
   }

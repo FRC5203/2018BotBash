@@ -5,7 +5,7 @@ import com.ctre.phoenix.motorcontrol.LimitSwitchSource;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 /**
- * The class dedicated to running the catapult and limit switch (located on the catapult)
+ * The class dedicated to running the catapult and limit switch (located on the catapult).
  */
 public class Catapult {
     

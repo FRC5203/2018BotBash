@@ -4,6 +4,9 @@ import java.util.Random;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+/**
+ * A waste of time.
+ */
 public class Happiness {
 
     //region Variables

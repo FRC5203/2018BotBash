@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
- * The class dedicated the to drive train and drive related methods
+ * The class dedicated the to drive train and drive related methods.
  */
 public class Drive {
     
@@ -19,9 +19,10 @@ public class Drive {
     public static SpeedControllerGroup rightSpeedGroup = new SpeedControllerGroup(frontRight,rearRight);
     public static SpeedControllerGroup leftSpeedGroup = new SpeedControllerGroup(frontLeft,rearLeft);
     public static final DifferentialDrive robotDrive = new DifferentialDrive(leftSpeedGroup,rightSpeedGroup);
+    public static double secondsPerInch;
     
     /*
-    * Initiates the safety on the drive train
+    * Initiates the safety on the drive train.
     */
     static{
         robotDrive.setSafetyEnabled(true);
@@ -32,7 +33,7 @@ public class Drive {
     
     /**
      * The same thing as arcade drive but used to eliminate calling on the actual differential drive
-     * of this class (Prevents more typing)
+     * of this class (Prevents more typing).
      * 
      * @param xSpeed Forward or reverse power
      * @param zRotation Left or right turning power
@@ -42,19 +43,38 @@ public class Drive {
     }
 
     /**
-     * Will drive the robot with the designated parameters for the designated amount of seconds
+     * Will drive the robot with the designated parameters for the designated amount of seconds.
+     * Uses a while loop that checks elapsed time and compares it to {@code}timeInSeconds{@code} variable.
      * 
      * @param xSpeed Forward or reverse power
      * @param zRotation Left or right turning power
      */
-    public static void driveFor(double xSpeed, double zRotation, double timeInSeconds){
+    public static void driveForTime(double xSpeed, double zRotation, double timeInSeconds){
         double startTime = Timer.getFPGATimestamp();
         while(Timer.getFPGATimestamp() - startTime < timeInSeconds){
             robotDrive.arcadeDrive(xSpeed, zRotation);
         }
+        robotDrive.arcadeDrive(0, 0);
+    }
+
+    /**
+     * Will drive the robot with the designated parameters for the given amount of time.
+     * Creates a local variable that uses the predetermined {@code}secondsPerInch{@code} variable to
+     * find the time it will take to drive the distance.
+     * 
+     * @param xSpeed The speed to run the robot (forward/backward)
+     * @param zRotation The speed to rotate at (left/right)
+     * @param distanceInInches The distance to ATTEMPT to drive (in inches)
+     */
+    public static void driveByInches(double xSpeed, double zRotation, double distanceInInches){
+        double startTime = Timer.getFPGATimestamp();
+        double estimatedTime = secondsPerInch * distanceInInches;
+        while(Timer.getFPGATimestamp() - startTime < estimatedTime){
+
+        }
     }
     /**
-     * Drives the robot with the predetermined controls for the controller (includes)
+     * Drives the robot with the predetermined controls for the controller (includes).
      */
     public static void controllerDrive(){
         if(Robot.m_stick.getY() > 0.01 || Robot.m_stick.getY() < 0.01 || Robot.m_stick.getX() > 0.01 || Robot.m_stick.getX() < 0.01){
@@ -71,7 +91,8 @@ public class Drive {
         robotDrive.arcadeDrive(0,0);
     }*/
     /**
-     * Don't attempt to use unless an encoder is on the drive train
+     * Don't attempt to use unless an encoder is on the drive train.
+     * Drives the robot using encoders by checking the distance on the encoder in a while loop.
      */
     public static void autoDriveByInch(int inches){
 
@@ -86,7 +107,9 @@ public class Drive {
     }
 
     /**
-     * Don't attempt to use unless and encoder is on the drive train
+     * Don't attempt to use unless and encoder is on the drive train.
+     * Drives the robot by checking the number of pulses on the encoder and
+     * then calculates the rotations based on pulses (4096 pulses per rotation).
      * 
      * @param rotations Number of rotations for the drive train to complete
      */

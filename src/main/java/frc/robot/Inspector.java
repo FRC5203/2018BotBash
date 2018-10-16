@@ -4,6 +4,10 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+/**
+ * A currently useless class that creates an empty window. Could be used
+ * to create variable/robot inspector with many functions (mostly for fun).
+ */
 public class Inspector {
 
     public JFrame frame;
